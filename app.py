@@ -32,7 +32,7 @@ def get_random_hug_gif():
         print(f"Error fetching Giphy API: {e}")
         return None
 
-@app.route('/')
+@app.route('/hug-tweet')
 def index():
     return render_template('index.html')
 
