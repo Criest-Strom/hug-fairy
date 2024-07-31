@@ -3,6 +3,7 @@ import tweepy
 import requests
 
 app = Flask(__name__)
+CORS(app)
 
 # Twitter API credentials
 consumer_key = 'ufZ9AntSrk9cLZYOssEXwxL9Z'
