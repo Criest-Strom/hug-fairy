@@ -43,6 +43,11 @@ def generate_hug_tweet_endpoint():
         message = f"hugs @/{username} {hug_gif}"
         api.update_status(message)
         return jsonify({'message': f'Hug tweet sent to @/{username}!'})
+
+    response = make_response(jsonify({'tweet': hug_tweet}))
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
     except tweepy.TweepError as e:
         print(f"Error posting tweet: {e}")
         return jsonify({'error': 'Failed to post tweet'}), 500
